@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: aca0090bd44d38f4fb1505845dadd0b6
+  - enabled: 1
+    path: Assets/Scenes/PlayerMenu.unity
+    guid: 39b10b6cb4da3134fbd0788b04ea6328
+  - enabled: 1
+    path: Assets/Scenes/CarShop.unity
+    guid: 4731a1d932b135c4e8e69215046b1f06
+  - enabled: 1
+    path: Assets/Scenes/GroceryGame.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  m_configObjects: {}
