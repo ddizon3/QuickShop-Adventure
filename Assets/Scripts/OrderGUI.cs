@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class GameOrder : MonoBehaviour
-{
+// handles order numbers on GUI
+// called when the GroceryGame scene is loaded
+public class OrderGUI : MonoBehaviour
+{    
     public TextMeshProUGUI Apple;
     public TextMeshProUGUI Berry;
     public TextMeshProUGUI Bread;
@@ -14,23 +16,25 @@ public class GameOrder : MonoBehaviour
     public TextMeshProUGUI Steak;
     public TextMeshProUGUI Turkey;
 
-    public static int apple_count = 0;
-    public static int berry_count = 0;
-    public static int bread_count = 0;
-    public static int cheese_count = 0;
-    public static int fish_count = 0;
-    public static int mushroom_count = 0;
-    public static int steak_count = 0;
-    public static int turkey_count = 0;
+    public static int apple_count;
+    public static int berry_count;
+    public static int bread_count;
+    public static int cheese_count;
+    public static int fish_count;
+    public static int mushroom_count;
+    public static int steak_count;
+    public static int turkey_count;
 
+    public static bool bombHit = false;
     void Start()
     {
+        ResetGUI();
         DisplayOrder();
-
     }
 
      void Update()
     {
+        //order will be updated when player collects items
         Apple.text = "Apples: " + apple_count;
         Berry.text = "Berries: " + berry_count;
         Bread.text = "Bread: " + bread_count;
@@ -39,15 +43,21 @@ public class GameOrder : MonoBehaviour
         Mushrooms.text = "Mushrooms: " + mushroom_count;
         Steak.text = "Steak: " + steak_count;
         Turkey.text = "Turkey: " + turkey_count;
+
+        if (bombHit)
+        {
+            bombHit = false;
+            ResetGUI();
+            DisplayOrder(); //display updated order
+        }
     }
 
-    void DisplayOrder()
-    {
+     void DisplayOrder() {
         int length = OrderController.orderList.Count; //number of items to shop for
 
         for (int i = 0; i < length; i++) //check each item in grocery list
         {
-            string itemName = OrderController.orderList[i].name; //get name of item i
+            string itemName = OrderController.orderList[i]; //get name of item i
             
             if (itemName.Contains("Apple"))
             {
@@ -92,5 +102,18 @@ public class GameOrder : MonoBehaviour
 
         }
 
+    }
+
+    void ResetGUI()
+    {
+        //reset item count
+        apple_count = 0;
+        berry_count = 0;
+        bread_count = 0;
+        cheese_count = 0;
+        fish_count = 0;
+        mushroom_count = 0;
+        steak_count = 0;
+        turkey_count = 0;
     }
 }

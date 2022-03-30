@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonController : MonoBehaviour
 {
+    //PlayerMenu scene, MenuCanvas object
 
     public void ChangeToGameMenu()
     {
