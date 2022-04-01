@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GroceryGame.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/CarGame.unity
+    guid: 1835c98cac3173b48899a518aea63c7e
   m_configObjects: {}

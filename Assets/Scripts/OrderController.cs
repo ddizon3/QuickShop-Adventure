@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 //called when PlayerMenu scene is loaded
 public class OrderController : MonoBehaviour
@@ -130,6 +131,6 @@ public class OrderController : MonoBehaviour
         GameController.gasUsed = gasUsage;
 
         print("GAME OVER! transitioning to delivery game...");
-
+        SceneManager.LoadScene("CarGame");
     }
 }
